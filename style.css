@@ -28,6 +28,7 @@ header {
 nav {
     display: flex; justify-content: space-between; align-items: center;
     max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
+    height: 80px; /* Give header a fixed height */
 }
 nav .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-color); text-decoration: none; }
 nav ul { list-style: none; display: flex; gap: 1.5rem; }
@@ -43,40 +44,41 @@ nav a::after {
 nav a:hover, nav a.active { color: var(--accent-color); }
 nav a:hover::after, nav a.active::after { width: 100%; }
 
+/* --- THE MAIN FIX --- */
+/* Push ALL main content down by the height of the header */
+main {
+    padding-top: 80px; 
+}
+
 /* Hero Section */
 .hero {
-    min-height: 50vh; /* You can adjust this height */
+    min-height: 90vh;
     display: flex;
-    flex-direction: column; /* Center content vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 2rem 2rem; /* FIXED: Correct padding: top, left/right, bottom */
-    text-align: center; /* Ensures text is centered */
+    padding: 2rem; /* Reset padding */
+    gap: 2rem;
 }
-/* REMOVED the extra stray curly brace that was here */
-
-.hero-text h1 { font-size: 3.5rem; font-weight: 700; }
+.hero-text {
+    max-width: 60%;
+}
 .hero-text h2 { font-size: 1.8rem; margin: 0.5rem 0; min-height: 54px; }
 .hero-text .tagline { font-size: 1.2rem; color: #aaa; margin-bottom: 2rem; }
 .typing-text { color: var(--accent-color); font-weight: 600; }
-
 .social-links a {
     color: var(--text-color);
     font-size: 1.8rem;
-    margin: 0 0.75rem; /* Replaced margin-right with equal spacing */
+    margin-right: 1.5rem;
     transition: color 0.3s, transform 0.3s;
 }
-
 .social-links a:hover { color: var(--accent-color); transform: translateY(-5px); }
-
 .hero-image img {
-    max-width: 150px; /* Adjusted size for a better hero layout */
+    max-width: 300px; /* Can adjust size */
     border-radius: 50%;
     border: 5px solid var(--accent-color);
     box-shadow: 0 0 30px rgba(0, 170, 255, 0.4);
-    margin-bottom: 2rem; /* Add space between image and text */
 }
 
 /* General Content Section Styling */
@@ -175,11 +177,16 @@ footer { text-align: center; padding: 2rem; background: var(--primary-color); ma
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul { display: none; }
+    main { padding-top: 70px; } /* Slightly smaller padding for mobile */
     .hero { 
-        padding-top: 100px; /* Adjust padding for mobile */
+        flex-direction: column-reverse; /* Stack image and text on mobile */
+        text-align: center;
+    }
+    .hero-text {
+        max-width: 100%;
     }
     .hero-image img {
-        max-width: 120px; /* Smaller image on mobile */
+        max-width: 200px; /* Smaller image on mobile */
     }
     .hero-text h2 { font-size: 1.5rem; min-height: 45px; }
     .timeline::after { left: 15px; }
