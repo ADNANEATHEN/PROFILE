@@ -1,74 +1,155 @@
-document.addEventListener('DOMContentLoaded', () => {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adnan Mustafa | Digital Innovator Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Font Awesome for icons -->
+</head>
+<body>
 
-    // --- Typing Animation ---
-    const typingText = document.querySelector('.typing-text');
-    // UPDATED with your new data
-    const words = ["Web Developer", "Graphic Designer", "SEO Expert", "Pharm.D Student"];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+    <header>
+        <nav>
+            <a href="#home" class="logo">Adnan Mustafa</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    function type() {
-        const currentWord = words[wordIndex];
-        // Use a non-breaking space as a placeholder to prevent layout shifts
-        typingText.textContent = currentWord.substring(0, charIndex) || '\u00A0';
+    <main>
+        <!-- Home/Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1>Adnan Mustafa</h1>
+                <h2><span class="typing-text"></span></h2>
+                <p class="tagline">Merging Healthcare with Digital Innovation</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/adnan-mustafa-a186422a9/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <!-- IMPORTANT: Add your Instagram link here -->
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:smaartadnan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- IMPORTANT: Replace with a URL to your photo -->
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNV9L6t3jQJ1yL2y0r_lK_r4f1iV-U3gHj_lZ_aQ_bL9l9y_jV-L_l_l_l_l_l_l_l_l_l_l=w1365-h910" alt="Adnan Mustafa">
+            </div>
+        </section>
 
-        if (!isDeleting && charIndex < currentWord.length) {
-            charIndex++;
-            setTimeout(type, 100);
-        } else if (isDeleting && charIndex > 0) {
-            charIndex--;
-            setTimeout(type, 50);
-        } else {
-            isDeleting = !isDeleting;
-            if (!isDeleting) {
-                wordIndex = (wordIndex + 1) % words.length;
-            }
-            setTimeout(type, 1200);
-        }
-    }
-    type();
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>
+                I am a multi-talented professional at the exciting intersection of healthcare and technology. As a Pharm.D graduate, I have a deep understanding of the pharmaceutical sciences, which I uniquely combine with my skills as a Web Developer, Graphic Designer, and SEO Expert. My passion is to leverage digital innovation to create meaningful, user-friendly experiences and solve complex problems.
+            </p>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" class="content-section">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Jan 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Founder - Fearless Info</h3>
+                        <ul>
+                            <li>Independently managed the end-to-end development and growth of fearlessinfo.com.</li>
+                            <li>Designed and maintained a fully functional, user-friendly website.</li>
+                            <li>Conducted in-depth research to produce accurate and relevant content.</li>
+                            <li>Wrote, edited, and published SEO-optimized articles.</li>
+                            <li>Created and implemented a content strategy to drive traffic and engagement.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Mar 2021 - Nov 2023</div>
+                    <div class="timeline-content">
+                        <h3>Accountant - Wholesaler</h3>
+                        <ul>
+                            <li>Managed ledger accounts for wholesalers, ensuring accuracy and compliance with financial regulations.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Experience Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Jan 2020 - May 2021</div>
+                    <div class="timeline-content">
+                        <h3>Graphic Designer - Fiverr</h3>
+                        <ul>
+                            <li>Developed visually appealing designs for projects including logos, branding, and marketing collateral.</li>
+                            <li>Created vector art and assisted clients with editing video lectures during the pandemic.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    // --- Scroll Animations (Fade-in on scroll) ---
-    const sections = document.querySelectorAll('.content-section');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+        <!-- Projects Section -->
+        <section id="projects" class="content-section">
+            <h2>Featured Project</h2>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <!-- IMPORTANT: Replace with a screenshot of your website -->
+                    <img src="https://via.placeholder.com/400x225.png/2a2a2a/e0e0e0?text=FearlessInfo.com" alt="Fearless Info Website">
+                    <h3>Fearless Info</h3>
+                    <p>A user-focused content website built from the ground up, featuring SEO-optimized articles and a robust content strategy to drive engagement.</p>
+                    <div class="project-links">
+                        <a href="http://fearlessinfo.com" target="_blank">Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <!-- Add more project cards here if you have them -->
+            </div>
+        </section>
 
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+        <!-- Skills Section -->
+        <section id="skills" class="content-section">
+            <h2>Top Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Web Development</div>
+                <div class="skill-item">Graphic Design</div>
+                <div class="skill-item">Video Editing</div>
+                <div class="skill-item">SEO Strategy</div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="content-section">
+            <h2>Education</h2>
+            <div class="education-card">
+                <h3>University of Sindh</h3>
+                <p><strong>Doctor of Pharmacy (Pharm.D)</strong>, Pharmaceutical Sciences</p>
+                <p>Graduated: January 2023</p>
+            </div>
+        </section>
 
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-    
-    // --- Active Nav Link on Scroll ---
-    const navLinks = document.querySelectorAll('nav a');
-    const allSections = document.querySelectorAll('main section');
+        <!-- Contact Section -->
+        <section id="contact" class="content-section">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities. Let's build something amazing together.</p>
+            <a href="mailto:smaartadnan@gmail.com" class="cta-button">Say Hello</a>
+        </section>
+    </main>
 
-    const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if(link.getAttribute('href').substring(1) === entry.target.id) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }, { threshold: 0.5 }); // 50% of the section must be visible
+    <footer>
+        <p>© 2024 Adnan Mustafa. Crafted with code.</p>
+    </footer>
 
-    allSections.forEach(section => {
-        navObserver.observe(section);
-    });
-
-});
+    <script src="script.js"></script>
+</body>
+</html>
