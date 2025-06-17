@@ -45,24 +45,38 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 
 /* Hero Section */
 .hero {
-    min-height: 50vh; display: flex; align-items: center;
-    justify-content: space-between; max-width: 1200px;
-    margin: 0 auto; padding-top: 0 2rem; gap: 2rem;
+    min-height: 50vh; /* You can adjust this height */
+    display: flex;
+    flex-direction: column; /* Center content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 2rem 2rem; /* FIXED: Correct padding: top, left/right, bottom */
+    text-align: center; /* Ensures text is centered */
 }
-}
+/* REMOVED the extra stray curly brace that was here */
+
 .hero-text h1 { font-size: 3.5rem; font-weight: 700; }
 .hero-text h2 { font-size: 1.8rem; margin: 0.5rem 0; min-height: 54px; }
 .hero-text .tagline { font-size: 1.2rem; color: #aaa; margin-bottom: 2rem; }
 .typing-text { color: var(--accent-color); font-weight: 600; }
+
 .social-links a {
-    color: var(--text-color); font-size: 1.8rem; margin-right: 1.5rem;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin: 0 0.75rem; /* Replaced margin-right with equal spacing */
     transition: color 0.3s, transform 0.3s;
 }
+
 .social-links a:hover { color: var(--accent-color); transform: translateY(-5px); }
+
 .hero-image img {
-    max-width: 350px; border-radius: 50%;
+    max-width: 150px; /* Adjusted size for a better hero layout */
+    border-radius: 50%;
     border: 5px solid var(--accent-color);
     box-shadow: 0 0 30px rgba(0, 170, 255, 0.4);
+    margin-bottom: 2rem; /* Add space between image and text */
 }
 
 /* General Content Section Styling */
@@ -80,7 +94,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
     background: var(--accent-color); margin: 0.5rem auto 0; border-radius: 2px;
 }
 
-/* --- NEW: Experience Timeline Section --- */
+/* --- Experience Timeline Section --- */
 .timeline { position: relative; max-width: 800px; margin: 0 auto; }
 .timeline::after {
     content: ''; position: absolute; width: 3px;
@@ -122,7 +136,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 }
 .project-links a:hover { background: var(--accent-color); color: var(--bg-color); }
 
-/* Skills Section - Updated for text-only cards */
+/* Skills Section */
 .skills-grid {
     display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;
 }
@@ -136,7 +150,7 @@ nav a:hover::after, nav a.active::after { width: 100%; }
     background-color: var(--accent-color);
 }
 
-/* --- NEW: Education Section --- */
+/* --- Education Section --- */
 .education-card {
     background: var(--secondary-color);
     padding: 2rem;
@@ -160,11 +174,14 @@ footer { text-align: center; padding: 2rem; background: var(--primary-color); ma
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul { display: none; /* Add mobile menu toggle here in future */ }
-    .hero { flex-direction: column-reverse; text-align: center; padding-top: 8rem; }
-    .hero-text h1 { font-size: 2.5rem; }
+    nav ul { display: none; }
+    .hero { 
+        padding-top: 100px; /* Adjust padding for mobile */
+    }
+    .hero-image img {
+        max-width: 120px; /* Smaller image on mobile */
+    }
     .hero-text h2 { font-size: 1.5rem; min-height: 45px; }
-    .hero-image img { max-width: 250px; }
     .timeline::after { left: 15px; }
     .timeline-item { width: 100%; padding-left: 45px; }
     .timeline-dot { left: 8px; }
