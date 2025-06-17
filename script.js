@@ -2,16 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Typing Animation ---
     const typingText = document.querySelector('.typing-text');
-    const words = ["Aeronautical Engineer", "Full-Stack Developer", "Creative Problem-Solver"];
+    // UPDATED with your new data
+    const words = ["Web Developer", "Graphic Designer", "SEO Expert", "Pharm.D Student"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
 
     function type() {
         const currentWord = words[wordIndex];
-        const currentChar = currentWord.substring(0, charIndex);
-        typingText.textContent = currentChar;
-        typingText.classList.add('stop-blinking');
+        // Use a non-breaking space as a placeholder to prevent layout shifts
+        typingText.textContent = currentWord.substring(0, charIndex) || '\u00A0';
 
         if (!isDeleting && charIndex < currentWord.length) {
             charIndex++;
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(type, 50);
         } else {
             isDeleting = !isDeleting;
-            typingText.classList.remove('stop-blinking');
             if (!isDeleting) {
                 wordIndex = (wordIndex + 1) % words.length;
             }
