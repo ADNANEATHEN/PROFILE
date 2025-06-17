@@ -45,9 +45,9 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 
 /* Hero Section */
 .hero {
-    min-height: 100vh; display: flex; align-items: center;
+    min-height: 50vh; display: flex; align-items: center;
     justify-content: space-between; max-width: 1200px;
-    margin: 0 auto; padding: 0 2rem; gap: 2rem;
+    margin: 0 auto; padding-top: 0 2rem; gap: 2rem;
 }
 }
 .hero-text h1 { font-size: 3.5rem; font-weight: 700; }
